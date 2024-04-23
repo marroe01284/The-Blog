@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  :root {
+      --primary-color: #FFFFFF;
+      --secondary-color: #000000;
+      --tertiary-color: #FFC107;
+      --font-black: #000000;
+      --font-white: #ffffff;
+    }
