@@ -8,3 +8,15 @@
     font-family: "Bebas Neue", sans-serif;
     font-family: "Poppins", sans-serif;
   } */
+.header{
+  background-color: var(--secondary-color);
+  height: 528px;
+}
+
+h1{
+  color: var(--primary-color);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 100px;
+  border-bottom: 1px solid white;
+  text-align: center;
+}
