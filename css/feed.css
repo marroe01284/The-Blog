@@ -8,3 +8,338 @@
     font-family: "Bebas Neue", sans-serif;
     font-family: "Poppins", sans-serif;
   } */
+
+.header {
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 100%;
+}
+h1 {
+  color: var(--font-white);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 100px;
+  border-bottom: 1px solid var(--primary-color);
+  text-align: center;
+}
+.carosel-container {
+  height: 957px;
+}
+.slides-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--primary-color);
+}
+.slide {
+  width: 100%;
+  height: auto;
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 70%;
+}
+.slide-arrow {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin: auto;
+  height: 4rem;
+  background-color: var(--primary-color);
+  border: none;
+  width: 2rem;
+  font-size: 3rem;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+}
+.slide-arrow:hover,
+.slide-arrow:focus {
+  opacity: 1;
+}
+#slide-arrow-prev {
+  left: 0;
+  padding-left: 0.25rem;
+  border-radius: 0 2rem 2rem 0;
+}
+#slide-arrow-next {
+  right: 0;
+  padding-left: 0.75rem;
+  border-radius: 2rem 0 0 2rem;
+}
+.slide p, h2 {
+  text-align: center;
+}
+.slide:nth-child(1) {
+  background-color: var(--secondary-color);
+}
+.slide:nth-child(2) {
+  background-color: var(--secondary-color);
+}
+.slide:nth-child(3) {
+  background-color: var(--secondary-color);
+  margin: 0;
+}
+.anchor-c {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  margin-top: 30px;
+}
+.carousel-img {
+  width: 76%;
+  height: 52%;
+  padding-bottom: 10px;
+  object-fit: cover;
+}
+.anchor-c:hover{
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+#blog-feed-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+  flex-wrap: wrap;
+  min-height: 400px;
+  margin: 0 auto;
+}
+.blog-post {
+  width: 180px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.blog-post:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.post-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.article-link {
+  display: flex;
+  justify-content: flex-start;
+  color: var(--secondary-color);
+  padding-top: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.article-link:hover{
+  color: var(--tertiary-color);
+}
+.split-container {
+  width: 100%;
+  height: 750px;
+  background-color: var(--tertiary-color);
+}
+#content-split {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.image-post {
+  width: 90%;
+  height: 40%;
+  padding-top: 10px;
+  object-fit: cover;
+}
+.header-yellow {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 50px;
+}
+.article-post {
+  padding: 0px 24px;
+}
+.author {
+  padding-top: 30px;
+  font-style: italic;
+  font-weight: 300;
+}
+.read-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border: 1px solid var(--secondary-color);
+  margin-top: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.read-btn:hover {
+  background-color: var(--primary-color);
+}
+#blog-feed-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  flex-wrap: wrap;
+}
+.split-container-two {
+  width: 100%;
+  height: 800px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+#content-spilt-two {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.header-black {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 50px;
+}
+.black-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  margin-top: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.black-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+#blog-feed-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  flex-wrap: wrap;
+}
+#content-split-three {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+@media (min-width: 690px) {
+  .post-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+  }
+  .image-post {
+      width: 80%;
+      height: 480px;
+      object-fit: cover;
+  }
+  #blog-feed-one {
+      gap: 8rem;
+      width: 100%;
+      min-height: 400px;
+      margin: 0 auto;
+  }
+  #blog-feed-two {
+      gap: 8rem;
+      width: 100%;
+      min-height: 400px;
+      margin: 0 auto;
+  }
+  #blog-feed-three {
+      gap: 8rem;
+      width: 100%;
+      min-height: 400px;
+      margin: 0 auto;
+  }
+  .paragraph {
+      font-size: 16px;
+  }
+  .blog-post {
+      width: 240px;
+  }
+  .paragraph-c {
+      width: 50%;
+      font-size: 1rem;
+  }
+  .header-c {
+      font-size: 2rem;
+  }
+  .carosel-container {
+      height: 957px;
+  }
+  #content-spilt-two {
+      font-size: 1.5rem;
+  }
+  #content-split-three {
+      font-size: 1.5rem;
+  }
+  .split-container {
+      height: 1100px;
+  }
+  .split-container-two {
+      height: 1100px;
+  }
+  #content-split {
+      font-size: 1.5rem;
+  }
+  .article-link {
+      font-size: 1rem;
+  }
+  .read-btn {
+      padding: 10px 40px;
+  }
+  .black-btn {
+      padding: 10px 40px;
+  }
+  .anchor-c {
+      padding: 10px 40px;
+      font-size: 1rem;
+      font-weight: 600;
+  }
+  .header-yellow {
+      font-size: 75px;
+  }
+}
+@media (min-width: 1000px) {
+  .split-container {
+      height: 1000px;
+  }
+  .split-container-two {
+      height: 1000px;
+  }
+}

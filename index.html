@@ -1,15 +1,65 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog feed page</title>
+    <meta name="description" content="A blog showcasing posts about fashion and its origin!">
+    <script src="js/feed.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/feed.css">
-    <script src="js/feed.js"></script>
 </head>
-<body>
 
+<body>
+    <header>
+        <div id="blog-content" style="display: none;"></div>
+
+        <div class="header">
+            <h1>the blog</h1>
+            <div class="carosel-container">
+                <section class="slider-wrapper">
+                    <button class="slide-arrow" id="slide-arrow-prev">
+                        
+                    </button>
+                    <button class="slide-arrow" id="slide-arrow-next">
+                    </button>
+                    <ul class="slides-container" id="slides-container">
+                        <li class="slide"></li>
+                        <li class="slide"></li>
+                        <li class="slide"></li>  
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </header>
+        <div id="blog-feed-one">
+        </div>
+    
+      <div class="split-container">
+          <div id="content-split">
+        </div>
+    </div>
+      <div id="blog-feed-two">
+
+      </div>
+      <div class="split-container-two">
+          <div id="content-spilt-two">
+              
+        </div>
+    </div>
+      <div id="blog-feed-three">
+
+      </div>
+      <div class="split-container">
+
+          <div id="content-split-three">
+              
+        </div>
+    </div>
 </body>
+
 </html>
