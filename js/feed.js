@@ -28,7 +28,7 @@ async function fetchAndCreateSlides() {
                 ${post.media ? `<img class="carousel-img" src="${post.media.url}" alt="${post.media.alt}">` : ''}
                 <h2 class="header-c">${post.title}</h2>
                 ${bodyContent ? `<p class="paragraph-c">${bodyContent}</p>` : ''}
-                <a class="anchor-c" href="/blog-post.html?ID=${post.id}">Read more</a>
+                <a class="anchor-c" href="/article.html?ID=${post.id}">Read more</a>
             `;
             slidesContainer.appendChild(slide);
         });
@@ -83,7 +83,7 @@ function append(data) {
             ${introduction ? `<p class="paragraph">${introduction}</p>` : ''}
             ${post.tag ? `<p class="paragraph">Tag: ${post.tag}</p>` : ''}
             <p>Author: ${post.author.name}</p>
-            <a class="article-link" href="/blog-post.html?ID=${post.id}">Read More</a>
+            <a class="article-link" href="/article.html?ID=${post.id}">Read More</a>
         `;
         const maxCharsBody = 500;
         switch (index) {
@@ -100,7 +100,7 @@ function append(data) {
                     <h2 class="header-yellow">${post.title}</h2>
                     ${bodyChars ? `<p class="article-post">${bodyChars}</p>` : ''}
                     <p class="author">Author: ${post.author.name}</p>
-                    <a class="read-btn" href="/blog-post.html?ID=${post.id}">Read more</a>
+                    <a class="read-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
                 break;
             case 5:
@@ -116,7 +116,7 @@ function append(data) {
                     <h2 class="header-black">${post.title}</h2>
                     ${bodyCharsTwo ? `<p class="article-post">${bodyCharsTwo}</p>` : ''}
                     <p class="author">Author: ${post.author.name}</p>
-                    <a class="black-btn" href="/blog-post.html?ID=${post.id}">Read more</a>
+                    <a class="black-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
                 break;
             case 10:
@@ -132,7 +132,7 @@ function append(data) {
                     <h2 class="header-black">${post.title}</h2>
                     ${bodyCharsThree ? `<p class="article-post">${bodyCharsThree}</p>` : ''}
                     <p class="author">Author: ${post.author.name}</p>
-                    <a class="read-btn" href="/blog-post.html?ID=${post.id}">Read more</a>
+                    <a class="read-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
                 break;
         }

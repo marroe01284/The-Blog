@@ -1,15 +1,28 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Article</title>
+    <meta name="description" content="A blog post about fashion and its origin!">
+    <script src="js/article.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/article.css">
-    <script src="js/article.js"></script>
 </head>
+
 <body>
-    
+    <div class="post-container">
+        <div id="loader" class="loader"></div>
+        <div id="blog-content" style="display: none;"></div>
+    </div>
+    <div class="btn-container">
+        <button id="back-btn" class="share-btn">Back</button> <!-- Back button -->
+        <button id="share-btn" class="share-btn" style="display: none;">Share</button> <!-- Add share button -->
+    </div>
 </body>
+
 </html>
