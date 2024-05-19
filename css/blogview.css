@@ -1,0 +1,104 @@
+@import url("utils.css");
+
+/* :root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #000000;
+    --tertiary-color: #FFC107;
+    --font-black: #000000;
+    --font-white: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    font-family: "Poppins", sans-serif;
+  } */
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 0px;
+    border-bottom: 1.5px solid black;
+    height: 50px;
+}
+li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+li a:hover{
+    color: #FFC107;
+}
+  h1{
+    font-size: 75px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    margin: 20px 0;
+
+  }
+  #blog-posts{
+    padding: 0px 40px;
+  }
+  .post-image{
+    display: flex;
+    justify-content: center;
+    height: 300px; /* Adjust according to your design */
+    max-width: 100%; /* Allow container to resize down to fit smaller screens */
+    width: auto; /* Allow container to resize down to fit smaller screens */
+    margin: auto; /* Center the container */
+    overflow: hidden; 
+    margin-bottom: 2rem;
+  }
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    
+  }
+  .blog-post{
+    padding-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    border: 2px solid black;
+    margin-bottom: 1.5rem;
+  }
+  .body-contain{
+    width: 100%;
+    background-color: #FFC107;
+  }
+  .post-title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+  }
+  .post-body{
+    padding: 0 20px;
+  }
+  .container-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .edit-button{
+    width: 89px;
+    height: 37px;
+    background-color: white;
+    border: 1px solid black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: #FFC107;
+}
+  .delete-button{
+    width: 89px;
+    height: 37px;
+    background-color: white;
+    border: 1px solid black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
