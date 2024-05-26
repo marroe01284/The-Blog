@@ -4,7 +4,6 @@ const slidesContainer = document.getElementById("slides-container");
 const prevButton = document.getElementById("slide-arrow-prev");
 const nextButton = document.getElementById("slide-arrow-next");
 
-// this function fetches the last 3 post for the carousel
 async function fetchAndCreateSlides() {
     try {
         const response = await fetch(blogPage);
@@ -12,7 +11,7 @@ async function fetchAndCreateSlides() {
             throw new Error("Failed to fetch blog posts");
         }
         const data = await response.json();
-        const posts = data.data.slice(0, 3); // Get the first 3 posts
+        const posts = data.data.slice(0, 3);
         
         
         slidesContainer.innerHTML = "";
@@ -22,7 +21,6 @@ async function fetchAndCreateSlides() {
             const slide = document.createElement("li");
             slide.classList.add("slide");
             const maxLetters = 300;
-            // Limiting the character count for the post body
             const bodyContent = post.body.length > maxLetters ? post.body.substring(0, maxLetters) + "..." : post.body;
             slide.innerHTML = `
                 ${post.media ? `<img class="carousel-img" src="${post.media.url}" alt="${post.media.alt}">` : ''}
@@ -40,7 +38,7 @@ async function fetchAndCreateSlides() {
 
 window.addEventListener("load", fetchAndCreateSlides);
 
-// Function: update the index and snap and looping. 
+
 let currentIndex = 0;
 
 const updateIndex = (newIndex) => {
@@ -55,7 +53,7 @@ const updateIndex = (newIndex) => {
     slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
 };
 
-// Event listeners for previous and next buttons
+
 nextButton.addEventListener("click", () => {
     updateIndex(currentIndex + 1);
 });
@@ -64,7 +62,6 @@ prevButton.addEventListener("click", () => {
     updateIndex(currentIndex - 1);
 });
 
-// Function to append blog posts
 function append(data) {
     const blogFeedOne = document.getElementById("blog-feed-one");
     const contentSplit = document.getElementById("content-split");
@@ -76,6 +73,9 @@ function append(data) {
     data.data.forEach((post, index) => {
         const container = document.createElement("div");
         container.classList.add("blog-post");
+        container.addEventListener("click", () => {
+            window.location.href = `/article.html?ID=${post.id}`;
+        });
         const maxChars = 100;
         const introduction = post.body.length > maxChars ? post.body.substring(0, maxChars) + "..." : post.body;
         container.innerHTML = `
@@ -139,7 +139,6 @@ function append(data) {
     });
 }
 
-// Fetch blog posts and append them to the page
 fetch(blogPage)
     .then((response) => response.json())
     .then((data) => append(data))
