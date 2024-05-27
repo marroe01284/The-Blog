@@ -8,9 +8,21 @@ function getQueryParamValue(parameter) {
     return urlParams.get(parameter);
 }
 
+function formatAuthor(authorName) {
+    // Replace underscores and numbers with empty strings
+    const formattedName = authorName.replace(/[_\d]/g, '');
+    // Replace underscore with space and capitalize first letter of each word
+    return formattedName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString(undefined, options);
+}
+
 const postId = getQueryParamValue('ID');
 const blogPage = "https://v2.api.noroff.dev/blog/posts/Marius_roenning/";
-
 
 loader.style.display = "block";
 
@@ -23,19 +35,22 @@ fetch(`${blogPage}${postId}`)
     })
     .then(result => {
         const data = result.data;
+        const formattedAuthor = formatAuthor(data.author.name);
+        const formattedCreatedDate = formatDate(data.created);
+        const formattedUpdatedDate = formatDate(data.updated);
         // Hide the loader
         loader.style.display = "none";
         // Show the blog content
         blogEntry.style.display = "block";
         blogEntry.innerHTML = `
         <div class="post-head">
-        <h1 class="post-heading">${data.title}</h1>
-        ${data.media ? `<img class="post-image" src="${data.media.url}" alt="${data.media.alt}">` : ''}
-        <p class="post-content">${data.body}</p>
+            <h1 class="post-heading">${data.title}</h1>
+            ${data.media ? `<img class="post-image" src="${data.media.url}" alt="${data.media.alt}">` : ''}
+            <p class="post-content">${data.body}</p>
         </div>
         <div class="post-owner">
-        <p class="post-author">By: ${data.author.name}</p>   
-        <p class="post-publication">Published: ${data.created}</p>
+            <p class="post-author">By: ${formattedAuthor}</p>
+            <p class="post-publication">Published: ${formattedCreatedDate}</p>
         </div>
         `;
         shareButton.style.display = "block";

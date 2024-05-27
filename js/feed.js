@@ -3,6 +3,20 @@ const content = document.getElementById("container");
 const slidesContainer = document.getElementById("slides-container");
 const prevButton = document.getElementById("slide-arrow-prev");
 const nextButton = document.getElementById("slide-arrow-next");
+const searchInput = document.getElementById("search-input");
+const filterSelect = document.getElementById("filter-select");
+const searchButton = document.getElementById("search-button");
+
+function formatAuthor(authorName) {
+    const formattedName = authorName.replace(/[_\d]/g, '').replace(/_/g, ' ');
+    return formattedName.charAt(0).toUpperCase() + formattedName.slice(1).toLowerCase();
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString(undefined, options);
+}
 
 async function fetchAndCreateSlides() {
     try {
@@ -13,9 +27,7 @@ async function fetchAndCreateSlides() {
         const data = await response.json();
         const posts = data.data.slice(0, 3);
         
-        
         slidesContainer.innerHTML = "";
-
         
         posts.forEach(post => {
             const slide = document.createElement("li");
@@ -34,11 +46,6 @@ async function fetchAndCreateSlides() {
         console.error("Error fetching blog posts:", error);
     }
 }
-
-
-window.addEventListener("load", fetchAndCreateSlides);
-
-
 let currentIndex = 0;
 
 const updateIndex = (newIndex) => {
@@ -53,7 +60,6 @@ const updateIndex = (newIndex) => {
     slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
 };
 
-
 nextButton.addEventListener("click", () => {
     updateIndex(currentIndex + 1);
 });
@@ -62,7 +68,7 @@ prevButton.addEventListener("click", () => {
     updateIndex(currentIndex - 1);
 });
 
-function append(data) {
+function createBlogPosts(data) {
     const blogFeedOne = document.getElementById("blog-feed-one");
     const contentSplit = document.getElementById("content-split");
     const blogFeedTwo = document.getElementById("blog-feed-two");
@@ -70,7 +76,14 @@ function append(data) {
     const blogFeedThree = document.getElementById("blog-feed-three");
     const contentSplitThree = document.getElementById("content-split-three");
 
-    data.data.forEach((post, index) => {
+    blogFeedOne.innerHTML = '';
+    contentSplit.innerHTML = '';
+    blogFeedTwo.innerHTML = '';
+    contentSplitTwo.innerHTML = '';
+    blogFeedThree.innerHTML = '';
+    contentSplitThree.innerHTML = '';
+
+    data.forEach((post, index) => {
         const container = document.createElement("div");
         container.classList.add("blog-post");
         container.addEventListener("click", () => {
@@ -81,8 +94,8 @@ function append(data) {
         container.innerHTML = `
             ${post.media ? `<img class="post-img" src="${post.media.url}" alt="${post.media.alt}">` : ''}
             ${introduction ? `<p class="paragraph">${introduction}</p>` : ''}
-            ${post.tag ? `<p class="paragraph">Tag: ${post.tag}</p>` : ''}
-            <p>Author: ${post.author.name}</p>
+            ${post.tags ? `<p class="paragraph">Tag: ${post.tags.join(', ')}</p>` : ''}
+            <p>Updated: ${formatDate(post.updated)}</p>
             <a class="article-link" href="/article.html?ID=${post.id}">Read More</a>
         `;
         const maxCharsBody = 500;
@@ -99,7 +112,7 @@ function append(data) {
                     ${post.media ? `<img class="image-post" src="${post.media.url}" alt="${post.media.alt}">` : ''}
                     <h2 class="header-yellow">${post.title}</h2>
                     ${bodyChars ? `<p class="article-post">${bodyChars}</p>` : ''}
-                    <p class="author">Author: ${post.author.name}</p>
+                    <p class="author">Updated: ${formatDate(post.updated)}</p>
                     <a class="read-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
                 break;
@@ -115,7 +128,7 @@ function append(data) {
                     ${post.media ? `<img class="image-post" src="${post.media.url}" alt="${post.media.alt}">` : ''}
                     <h2 class="header-black">${post.title}</h2>
                     ${bodyCharsTwo ? `<p class="article-post">${bodyCharsTwo}</p>` : ''}
-                    <p class="author">Author: ${post.author.name}</p>
+                    <p class="author">Updated: ${formatDate(post.updated)}</p>
                     <a class="black-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
                 break;
@@ -131,21 +144,66 @@ function append(data) {
                     ${post.media ? `<img class="image-post" src="${post.media.url}" alt="${post.media.alt}">` : ''}
                     <h2 class="header-black">${post.title}</h2>
                     ${bodyCharsThree ? `<p class="article-post">${bodyCharsThree}</p>` : ''}
-                    <p class="author">Author: ${post.author.name}</p>
+                    <p class="author">Updated: ${formatDate(post.updated)}</p>
                     <a class="read-btn" href="/article.html?ID=${post.id}">Read more</a>
                 `;
+                break;
+            default:
                 break;
         }
     });
 }
 
-fetch(blogPage)
-    .then((response) => response.json())
-    .then((data) => append(data))
-    .catch((error) => {
-        console.error('Error fetching data:', error);
-        const div = document.createElement("div");
-        div.textContent = "Error fetching data.";
-        content.appendChild(div);
-    });
+async function fetchBlogPosts() {
+    try {
+        const response = await fetch(blogPage);
+        if (!response.ok) {
+            throw new Error("Failed to fetch blog posts");
+        }
+        const data = await response.json();
+        const posts = data.data;
+        createBlogPosts(posts);
+        populateTags(posts);
+    } catch (error) {
+        console.error("Error fetching blog posts:", error);
+    }
+}
 
+function populateTags(posts) {
+    const allTags = new Set();
+    posts.forEach(post => {
+        if (post.tags) {
+            post.tags.forEach(tag => allTags.add(tag));
+        }
+    });
+    filterSelect.innerHTML = `<option value="all">All Tags</option>`;
+    allTags.forEach(tag => {
+        const option = document.createElement("option");
+        option.value = tag;
+        option.textContent = tag;
+        filterSelect.appendChild(option);
+    });
+}
+
+function filterAndSearch() {
+    const searchQuery = searchInput.value.toLowerCase();
+    const selectedTag = filterSelect.value;
+    fetch(blogPage)
+        .then(response => response.json())
+        .then(data => {
+            const filteredPosts = data.data.filter(post => {
+                const matchesSearch = post.title.toLowerCase().includes(searchQuery);
+                const matchesTag = selectedTag === 'all' || (post.tags && post.tags.includes(selectedTag));
+                return matchesSearch && matchesTag;
+            });
+            createBlogPosts(filteredPosts);
+        })
+        .catch(error => console.error('Error fetching filtered posts:', error));
+}
+
+searchButton.addEventListener('click', filterAndSearch);
+searchInput.addEventListener('input', filterAndSearch);
+filterSelect.addEventListener('change', filterAndSearch);
+
+fetchAndCreateSlides();
+fetchBlogPosts();
