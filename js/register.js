@@ -5,10 +5,10 @@ registrationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     // Get input values
-    const name = registrationForm.elements.name.value;
-    const email = registrationForm.elements.email.value;
-    const password = registrationForm.elements.password.value;
-    const confirmPassword = registrationForm.elements['confirm-password'].value;
+    const name = registrationForm.elements.name.value.trim();
+    const email = registrationForm.elements.email.value.trim();
+    const password = registrationForm.elements.password.value.trim();
+    const confirmPassword = registrationForm.elements['confirm-password'].value.trim();
 
     // Client-side validation
     if (!isValidEmail(email)) {
@@ -51,6 +51,9 @@ registrationForm.addEventListener('submit', async (event) => {
         alert('Registration successful! You can now log in.');
         registrationForm.reset(); // Clear form fields
         errorMessage.textContent = ''; // Clear error message
+
+        // Redirect to the login page after successful registration
+        window.location.href = 'login.html';
     } catch (error) {
         showError('Registration failed. Please try again later.');
     }

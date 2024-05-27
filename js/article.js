@@ -24,6 +24,7 @@ function formatDate(dateString) {
 const postId = getQueryParamValue('ID');
 const blogPage = "https://v2.api.noroff.dev/blog/posts/Marius_roenning/";
 
+
 loader.style.display = "block";
 
 fetch(`${blogPage}${postId}`)

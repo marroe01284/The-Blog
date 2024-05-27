@@ -96,7 +96,7 @@ function createBlogPosts(data) {
             ${introduction ? `<p class="paragraph">${introduction}</p>` : ''}
             ${post.tags ? `<p class="key-info"> ${post.tags.join(', ')}</p>` : ''}
             <p class="key-info">Updated: ${formatDate(post.updated)}</p>
-            <a class="article-link" href="/article.html?ID=${post.id}">Read More</a>
+            
         `;
         const maxCharsBody = 500;
         switch (index) {

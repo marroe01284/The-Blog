@@ -66,6 +66,12 @@ function handleEditPost(postId) {
 
 // Function to handle deleting a blog post
 async function handleDeletePost(postId) {
+    // Display a confirmation dialog
+    const confirmed = confirm("Are you sure you want to delete this post?");
+    if (!confirmed) {
+        return; // Cancel deletion if not confirmed
+    }
+
     try {
         // Retrieve access token from local storage
         const user = JSON.parse(localStorage.getItem('user'));
