@@ -61,6 +61,14 @@ font-size: 32px;
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
 }
+#tags{
+  width: 90%;
+  height: 50px;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
 #content{
     width: 90%;
     margin-bottom: 1rem;
