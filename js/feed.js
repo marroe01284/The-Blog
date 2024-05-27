@@ -94,8 +94,8 @@ function createBlogPosts(data) {
         container.innerHTML = `
             ${post.media ? `<img class="post-img" src="${post.media.url}" alt="${post.media.alt}">` : ''}
             ${introduction ? `<p class="paragraph">${introduction}</p>` : ''}
-            ${post.tags ? `<p class="paragraph">Tag: ${post.tags.join(', ')}</p>` : ''}
-            <p>Updated: ${formatDate(post.updated)}</p>
+            ${post.tags ? `<p class="key-info"> ${post.tags.join(', ')}</p>` : ''}
+            <p class="key-info">Updated: ${formatDate(post.updated)}</p>
             <a class="article-link" href="/article.html?ID=${post.id}">Read More</a>
         `;
         const maxCharsBody = 500;
@@ -201,7 +201,6 @@ function filterAndSearch() {
         .catch(error => console.error('Error fetching filtered posts:', error));
 }
 
-searchButton.addEventListener('click', filterAndSearch);
 searchInput.addEventListener('input', filterAndSearch);
 filterSelect.addEventListener('change', filterAndSearch);
 

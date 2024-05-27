@@ -44,7 +44,7 @@ h1{
     
 }
 #title{
-width: 90%;
+width: 50%;
 height: 50px;
 margin-bottom: 1rem;
 border: 1px solid black;
@@ -52,6 +52,14 @@ font-family: "Bebas Neue", sans-serif;
 font-weight: 400;
 font-size: 32px;
 
+}
+#tags{
+  width: 90%;
+    height: 50px;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
 }
 #imageUrl{
     width: 90%;
