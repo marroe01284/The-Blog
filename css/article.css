@@ -1,14 +1,5 @@
 @import url("utils.css");
 
-/* :root {
-    --primary-color: #FFFFFF;
-    --secondary-color: #000000;
-    --tertiary-color: #FFC107;
-    --font-black: #000000;
-    --font-white: #ffffff;
-    font-family: "Bebas Neue", sans-serif;
-    font-family: "Poppins", sans-serif;
-  } */
 .loader {
   border: 8px solid #f3f3f3;
   /* Light grey */
@@ -34,7 +25,7 @@
 
 .post-head {
   width: 100%;
-  background-color: #FFC107;
+  background-color: var(--tertiary-color);
   padding-bottom: 24px;
   display: flex;
   justify-content: center;
@@ -44,7 +35,7 @@
 
 .post-heading {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 50px;
+  font-size: 100px;
   padding: 7px 24px;
 }
 
@@ -83,7 +74,7 @@
 }
 
 .share-btn {
-  border: 1px solid black;
+  border: 1px solid var(--secondary-color);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin: 0px 1rem 30px 1rem;
@@ -92,13 +83,13 @@
   font-size: 1rem;
   background-color: transparent;
   text-decoration: none;
-  color: black;
+  color: var(--secondary-color);
   cursor: pointer;
 }
 
 .share-btn:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 @media (min-width: 690px) {
