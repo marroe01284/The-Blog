@@ -86,6 +86,7 @@ img {
   margin-top: 1rem;
 }
 
+.delete-button,
 .edit-button {
   width: 89px;
   height: 37px;
@@ -93,18 +94,11 @@ img {
   border: 1px solid var(--secondary-color);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 
 button:hover {
   cursor: pointer;
   background-color: var(--tertiary-color);
-}
-
-.delete-button {
-  width: 89px;
-  height: 37px;
-  background-color: var(--primary-color);
-  border: 1px solid var(--secondary-color);
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
 }
