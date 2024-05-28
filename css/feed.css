@@ -191,7 +191,7 @@ h2 {
 
 .split-container {
   width: 94%;
-  height: 750px;
+  height: 800px;
   margin: auto;
   background-color: var(--tertiary-color);
 }
@@ -379,11 +379,11 @@ h2 {
   }
 
   .split-container {
-    height: 1100px;
+    height: 1200px;
   }
 
   .split-container-two {
-    height: 1100px;
+    height: 1200px;
   }
 
   #content-split {
