@@ -1,6 +1,5 @@
-# The Blog!
-[Skjermbilde 2024-05-28 kl  16 45 23](https://github.com/marroe01284/The-Blog/assets/143086706/71ddb5c2-7bc3-48e9-93b5-d8834b1b5c11)
 
+![the-blog](https://github.com/marroe01284/The-Blog/assets/143086706/32ad6618-c166-455e-9614-b9d825e82003)
 
 ## Overview
 Welcome to The Blog project! This repository contains the front-end user interface for an existing API blogging application. The application is designed to be responsive and dynamic, allowing users to view blog posts. This project includes admin pages for registering, logging in, and managing blog posts.
@@ -12,7 +11,11 @@ Welcome to The Blog project! This repository contains the front-end user interfa
 - Loader Animation: Visual feedback during content loading.
 - Filter and Search: Easily find specific blog posts.
 
-## Technologies Used
+## Technologies Used ⚙️
+![317755_badge_html_html5_achievement_award_icon](https://github.com/marroe01284/The-Blog/assets/143086706/22805279-f347-4711-bfaf-90644829aeae)
+![317756_badge_css_css3_achievement_award_icon](https://github.com/marroe01284/The-Blog/assets/143086706/2d5ee681-d075-4ce0-bfe7-9f9cc38dae37)![652581_code_command_develop_javascript_language_icon](https://github.com/marroe01284/The-Blog/assets/143086706/bb3e1746-a2cc-4f28-960d-94de2a4be801)
+
+
 - HTML
 - CSS
 - Vanilla JavaScript
@@ -26,7 +29,7 @@ Make sure you have the following installed:
 - A web browser (Chrome, Firefox, etc.)
 - A code editor (VSCode, Sublime Text, etc.)
   
-## Installation
+## Installation 🔧
 1. Clone the repository:
 ```bash
 git clone https://github.com/marroe01284/The-Blog.git
@@ -37,12 +40,12 @@ cd The-Blog
 ```
 3. Open the index.html file in your web browser to view the application.
 
-## Usage
+## Usage 
 - Viewing Blog Posts: The homepage displays all blog posts.
 - Creating Blog Posts: Admin users can create new blog posts from the admin panel.
 - Register/Login: Users can register a new account or login with existing credentials.
 
-## Contributing
+## Contributing 🫵
 Contributers are welcome, i am a junior developer in a world full of experienced developers so ill take all the learning i can get. (thank you in advance)  
 I find this the best method for all parties so please follow these steps:
 1. Fork the repository.
