@@ -183,23 +183,10 @@ h2 {
   object-fit: cover;
 }
 
-.article-link {
-  display: flex;
-  justify-content: flex-start;
-  color: var(--secondary-color);
-  padding-top: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 .key-info {
   font-family: "Poppins", sans-serif;
   font-style: italic;
   font-weight: 300;
-}
-
-.article-link:hover {
-  color: var(--tertiary-color);
 }
 
 .split-container {
@@ -209,7 +196,9 @@ h2 {
   background-color: var(--tertiary-color);
 }
 
-#content-split {
+#content-split,
+#content-split-three,
+#content-spilt-two {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -252,7 +241,8 @@ h2 {
   background-color: var(--primary-color);
 }
 
-#blog-feed-two {
+#blog-feed-two,
+#blog-feed-three {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,15 +258,6 @@ h2 {
   margin: auto;
   background-color: var(--secondary-color);
   color: var(--primary-color);
-}
-
-#content-spilt-two {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
 }
 
 .header-black {
@@ -300,25 +281,6 @@ h2 {
 .black-btn:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-}
-
-#blog-feed-three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  flex-wrap: wrap;
-}
-
-#content-split-three {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
 }
 
 .footer-container {

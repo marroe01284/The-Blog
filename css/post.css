@@ -93,6 +93,8 @@ button {
     background-color: transparent;
     border: 1px solid var(--secondary-color);
     margin-bottom: 6%;
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 button:hover {
