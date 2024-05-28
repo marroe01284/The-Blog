@@ -15,13 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = postForm.elements.content.value;
         const tagsInput = postForm.elements.tags.value;
 
-        // Validate content length
         if (content.length < 300 || content.length > 2000) {
             showError('Content must be between 300 and 2000 characters long.');
             return;
         }
 
-        // Validate tags
         const tags = tagsInput.split(',').map(tag => tag.trim());
         if (tags.length > 2) {
             showError('You can only enter up to 2 tags.');
@@ -44,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: imageUrl,
                 alt: title
             },
-            tags: tags // Add tags to the post data
+            tags: tags
         };
 
         try {

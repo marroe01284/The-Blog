@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog feed page</title>
+    <title>The Blog</title>
     <meta name="description" content="A blog showcasing posts about fashion and its origin!">
+    <link rel="icon" type="image/png" href="icons/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/156d4e89cb.js" crossorigin="anonymous"></script>
     <script src="js/feed.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +20,6 @@
 <body>
     <header>
         <div id="blog-content" style="display: none;"></div>
-
         <div class="header">
             <h1>the blog</h1>
         </div>
@@ -43,14 +44,13 @@
         <input type="text" id="search-input" placeholder="Search by title...">
         <select id="filter-select">
             <option value="all">All Tags</option>
-            <!-- Options will be populated dynamically -->
         </select>
     </div>
-    <div id="blog-feed-one">
-    </div>
+    <div id="blog-feed-one"></div>
 
     <div class="split-container">
         <div id="content-split">
+
         </div>
     </div>
     <div id="blog-feed-two">
@@ -65,7 +65,6 @@
 
     </div>
     <div class="split-container">
-
         <div id="content-split-three">
 
         </div>

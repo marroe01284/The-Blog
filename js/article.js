@@ -9,9 +9,7 @@ function getQueryParamValue(parameter) {
 }
 
 function formatAuthor(authorName) {
-    // Replace underscores and numbers with empty strings
     const formattedName = authorName.replace(/[_\d]/g, '');
-    // Replace underscore with space and capitalize first letter of each word
     return formattedName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
@@ -39,9 +37,9 @@ fetch(`${blogPage}${postId}`)
         const formattedAuthor = formatAuthor(data.author.name);
         const formattedCreatedDate = formatDate(data.created);
         const formattedUpdatedDate = formatDate(data.updated);
-        // Hide the loader
+
         loader.style.display = "none";
-        // Show the blog content
+
         blogEntry.style.display = "block";
         blogEntry.innerHTML = `
         <div class="post-head">

@@ -217,8 +217,7 @@ function filterAndSearch() {
                 return matchesSearch && matchesTag;
             });
             createBlogPosts(filteredPosts);
-
-            // Toggle containers based on search/filter results
+            
             if (filteredPosts.length > 0) {
                 toggleContainers(false);
             } else {

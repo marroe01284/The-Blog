@@ -20,10 +20,9 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
   
       const data = await response.json();
   
-      // Extract user data from response
+
       const { name, email: userEmail, bio, avatar, banner, accessToken } = data.data;
   
-      // Save user data to local storage
       localStorage.setItem('user', JSON.stringify({
         name,
         email: userEmail,
@@ -33,11 +32,9 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
         accessToken
       }));
   
-      // Redirect to another page
-      window.location.href = '../account/makepost.html'; // Replace '/dashboard' with the desired destination
+      window.location.href = '../account/makepost.html';
     } catch (error) {
       console.error('Login failed:', error);
-      // Display error message to user
       errorMessage.textContent = 'Invalid email or password.';
       errorMessage.style.display = 'block';
     }
