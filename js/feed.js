@@ -7,6 +7,8 @@ const searchInput = document.getElementById("search-input");
 const filterSelect = document.getElementById("filter-select");
 const searchButton = document.getElementById("search-button");
 
+
+
 function formatAuthor(authorName) {
     const formattedName = authorName.replace(/[_\d]/g, '').replace(/_/g, ' ');
     return formattedName.charAt(0).toUpperCase() + formattedName.slice(1).toLowerCase();
@@ -96,7 +98,6 @@ function createBlogPosts(data) {
             ${introduction ? `<p class="paragraph">${introduction}</p>` : ''}
             ${post.tags ? `<p class="key-info"> ${post.tags.join(', ')}</p>` : ''}
             <p class="key-info">Updated: ${formatDate(post.updated)}</p>
-            
         `;
         const maxCharsBody = 500;
         switch (index) {
@@ -110,7 +111,7 @@ function createBlogPosts(data) {
                 const bodyChars = post.body.length > maxCharsBody ? post.body.substring(0, maxCharsBody) + "..." : post.body;
                 contentSplit.innerHTML = `
                     ${post.media ? `<img class="image-post" src="${post.media.url}" alt="${post.media.alt}">` : ''}
-                    <h2 class="header-yellow">${post.title}</h2>
+                    <h2 class="header-black">${post.title}</h2>
                     ${bodyChars ? `<p class="article-post">${bodyChars}</p>` : ''}
                     <p class="author">Updated: ${formatDate(post.updated)}</p>
                     <a class="read-btn" href="/article.html?ID=${post.id}">Read more</a>
@@ -185,9 +186,28 @@ function populateTags(posts) {
     });
 }
 
+function toggleContainers(visible) {
+    const containers = document.querySelectorAll('.split-container, .split-container-two, .carosel-container');
+    containers.forEach(container => {
+        container.style.display = visible ? 'block' : 'none';
+    });
+}
+
+function resetView() {
+    fetchAndCreateSlides();
+    fetchBlogPosts();
+    toggleContainers(true);
+}
+
 function filterAndSearch() {
     const searchQuery = searchInput.value.toLowerCase();
     const selectedTag = filterSelect.value;
+
+    if (searchQuery === "" && selectedTag === "all") {
+        resetView();
+        return;
+    }
+
     fetch(blogPage)
         .then(response => response.json())
         .then(data => {
@@ -197,6 +217,13 @@ function filterAndSearch() {
                 return matchesSearch && matchesTag;
             });
             createBlogPosts(filteredPosts);
+
+            // Toggle containers based on search/filter results
+            if (filteredPosts.length > 0) {
+                toggleContainers(false);
+            } else {
+                toggleContainers(true);
+            }
         })
         .catch(error => console.error('Error fetching filtered posts:', error));
 }
