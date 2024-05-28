@@ -3,6 +3,11 @@
 
 ## Overview
 Welcome to The Blog project! This repository contains the front-end user interface for an existing API blogging application. The application is designed to be responsive and dynamic, allowing users to view blog posts. This project includes admin pages for registering, logging in, and managing blog posts.
+have a look at the result:
+ 1. User
+- https://taupe-kataifi-bbb0b1.netlify.app/index.html
+ 2. Admin
+- https://taupe-kataifi-bbb0b1.netlify.app/account/login.html
 
 ## Features
 - Responsive Design: Optimized for various screen sizes.
