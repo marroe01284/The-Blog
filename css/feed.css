@@ -1,4 +1,37 @@
 @import url("utils.css");
+#loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+#loader {
+  border: 6px solid var(--primary-color);
+  border-top: 6px solid var(--tertiary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#blog-content {
+  display: none;
+}
 
 .header {
   background-color: var(--secondary-color);

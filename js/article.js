@@ -1,7 +1,15 @@
 const blogEntry = document.getElementById("blog-content");
-const loader = document.getElementById("loader");
 const shareButton = document.getElementById("share-btn");
 const backButton = document.getElementById("back-btn");
+const loaderContainer = document.getElementById("loader-container");
+const loader = document.getElementById('loader');
+
+loaderContainer.style.display = 'flex';
+
+setTimeout(() => {
+    loaderContainer.style.display = 'none';
+    content.style.display = 'block';
+}, 500);
 
 function getQueryParamValue(parameter) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,9 +30,6 @@ function formatDate(dateString) {
 const postId = getQueryParamValue('ID');
 const blogPage = "https://v2.api.noroff.dev/blog/posts/Marius_roenning/";
 
-
-loader.style.display = "block";
-
 fetch(`${blogPage}${postId}`)
     .then(response => {
         if (!response.ok) {
@@ -36,9 +41,6 @@ fetch(`${blogPage}${postId}`)
         const data = result.data;
         const formattedAuthor = formatAuthor(data.author.name);
         const formattedCreatedDate = formatDate(data.created);
-        const formattedUpdatedDate = formatDate(data.updated);
-
-        loader.style.display = "none";
 
         blogEntry.style.display = "block";
         blogEntry.innerHTML = `
@@ -56,7 +58,6 @@ fetch(`${blogPage}${postId}`)
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
-        loader.style.display = "none";
     });
 
 shareButton.addEventListener('click', () => {

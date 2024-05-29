@@ -6,7 +6,15 @@ const nextButton = document.getElementById("slide-arrow-next");
 const searchInput = document.getElementById("search-input");
 const filterSelect = document.getElementById("filter-select");
 const searchButton = document.getElementById("search-button");
+const loaderContainer = document.getElementById("loader-container");
+const loader = document.getElementById('loader');
 
+loaderContainer.style.display = 'flex';
+
+setTimeout(() => {
+    loaderContainer.style.display = 'none';
+    content.style.display = 'block';
+}, 1000);
 
 
 function formatAuthor(authorName) {
