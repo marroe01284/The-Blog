@@ -1,4 +1,5 @@
 const blogEntry = document.getElementById("blog-content");
+const content = document.getElementById("post-container")
 const shareButton = document.getElementById("share-btn");
 const backButton = document.getElementById("back-btn");
 const loaderContainer = document.getElementById("loader-container");
